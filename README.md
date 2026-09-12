@@ -1,6 +1,17 @@
 # TR
 
-Two Qt Widgets desktop apps in C++:
+Two Qt Widgets desktop apps in C++.
 
-- **`1`** — a degree/minute/second (DMS) angle calculator.
-- **`2`** — a Traveling Salesman Problem solver using the branch-and-bound method (matrix reduction with row/column penalties to pick the branching vertex), applied to a randomly generated graph. The found route and vertex layout are rendered graphically via `QGraphicsScene`.
+## 1 — DMS angle calculator
+
+Enter angles in degrees/minutes/seconds, pick a binary operation (+, −, ×, ÷) or a trig / inverse-trig function (sin, cos, tan, cot and their inverses), and get the result. Sign of each angle is toggled independently.
+
+![Addition of two angles](screenshots/calculator-addition.png)
+![Cosine of a sum](screenshots/calculator-trig.png)
+
+## 2 — Traveling Salesman Problem solver
+
+Solves TSP with the branch-and-bound method: repeated matrix reduction (subtracting row/column minimums) plus a penalty score to pick which zero-cost edge to branch on next. Starts from a preset example graph and lets you add vertices on the fly; shows the adjacency matrix, the resulting route, and its total length. The graph itself is drawn with `QGraphicsScene`, vertices placed on a circle.
+
+![Solving the base 6-vertex graph](screenshots/tsp-solution.png)
+![After adding a 7th vertex](screenshots/tsp-add-vertex.png)
